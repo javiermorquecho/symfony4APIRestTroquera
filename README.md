@@ -17,6 +17,12 @@ Simple example of an API REST with Symfony 4.1
     $ cp .env.dist .env
 ```
 
+## Start server
+
+```
+    php bin/console server:start 127.0.0.1:8000
+```
+
 ## Troquera Ventas, getting with Curl
 ```
 POST
