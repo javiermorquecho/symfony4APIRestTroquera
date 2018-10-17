@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Entity\TVentas" table="t_ventas">
+    <id name="idTVenta" type="integer" column="id_t_venta">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="idTCliente" type="integer" column="id_t_cliente" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="idTPrenda" type="integer" column="id_t_prenda" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fechaRegistro" type="date" column="fecha_registro" nullable="true"/>
+    <field name="creditoInternoUsado" type="decimal" column="credito_interno_usado" precision="10" scale="2" nullable="true"/>
+    <field name="totalVenta" type="decimal" column="total_venta" precision="10" scale="2" nullable="true"/>
+  </entity>
+</doctrine-mapping>

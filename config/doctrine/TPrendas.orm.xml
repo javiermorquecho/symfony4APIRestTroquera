@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="App\Entity\TPrendas" table="t_prendas">
+    <id name="idTPrenda" type="integer" column="id_t_prenda">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="marca" type="string" column="marca" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="tipoDePrenda" type="string" column="tipo_de_prenda" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="precio" type="decimal" column="precio" precision="10" scale="2" nullable="true"/>
+  </entity>
+</doctrine-mapping>
