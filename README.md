@@ -17,12 +17,40 @@ Simple example of an API REST with Symfony 4.1
     $ cp .env.dist .env
 ```
 
-## Getting with Curl 
+## Troquera Ventas, getting with Curl
+```
+POST
+curl -H 'content-type: application/json' -v -X POST -d '{"idTCliente":1,"idTPrenda":1,"creditoInternosado":100.1,"totalVenta":200.2}' http://127.0.0.1:8000/tienda/ventas/new
+
+---
+GET
+curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:8000/tienda/ventas/1
+
+---
+PUT
+1. Actualizar
+curl -X PUT \
+  'http://127.0.0.1:8000/tienda/ventas/update?idTCliente=1&idTPrenda=1&creditoInternosado=100.3&totalVenta=200.4&idTVentas=11' \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: d4cfc6d7-9fc1-fa35-96de-3ab6506c6f5a'
+
+2. Crear
+curl -X PUT \
+  'http://127.0.0.1:8000/tienda/ventas/update?idTCliente=1&idTPrenda=1&creditoInternosado=100.5&totalVenta=200.6&idTVentas=' \
+  -H 'cache-control: no-cache' \
+  -H 'postman-token: d4cfc6d7-9fc1-fa35-96de-3ab6506c6f5a'
+
+---
+DELETE
+curl -X DELETE   http://127.0.0.1:8000/tienda/ventas/delete/10   -H 'cache-control: no-cache'   -H 'postman-token: 9aae04b3-f939-65d9-2f42-621b410a90af'
+```
+
+## Book Getting with Curl
 
 ```
-    $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:8000/api/books 
+    $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:8000/api/books
     $ curl -H 'content-type: application/json' -v -X GET http://127.0.0.1:8000/api/books/:id
-    $ curl -H 'content-type: application/json' -v -X POST -d '{"title":"Foo bar","price":"19.99"}' http://127.0.0.1:8000/api/book/new 
+    $ curl -H 'content-type: application/json' -v -X POST -d '{"title":"Foo bar","price":"19.99"}' http://127.0.0.1:8000/api/book/new
     $ curl -H 'content-type: application/json' -v -X PUT -d '{"title":"Foo bar","price":"19.99"}' http://127.0.0.1:8000/api/books/edit/:id
     $ curl -H 'content-type: application/json' -v -X DELETE http://127.0.0.1:8000/api/books/remove/:id
 ```
